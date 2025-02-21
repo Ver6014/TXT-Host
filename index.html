@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Document Editor</title>
+</head>
+<body>
+    <h1>Text Document Editor</h1>
+    <textarea id="textEditor" rows="20" cols="80"></textarea><br>
+    <button id="saveButton">Save</button>
+    <button id="loadButton">Load</button>
+
+    <script>
+        document.getElementById('saveButton').addEventListener('click', function() {
+            const text = document.getElementById('textEditor').value;
+            const blob = new Blob([text], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'document.txt';
+            link.click();
+        });
+
+        document.getElementById('loadButton').addEventListener('click', function() {
+                
+
+const fs = require('fs');
+
+fs.readFile('TXT-Host/txt.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.error('Error reading the file:', err);
+        return;
+    }
+    console.log('File content:', data);
+});
+
+                };
+                reader.readAsText(file);
+            };
+            input.click();
+        });
+    </script>
+</body>
+</html>
 
