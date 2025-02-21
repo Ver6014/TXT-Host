@@ -10,7 +10,7 @@
     <pre id="fileContent"></pre>
 
     <script>
-        fetch('TXT-Host/txt.txt')
+        fetch('txt.txt')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('fileContent').textContent = data;
